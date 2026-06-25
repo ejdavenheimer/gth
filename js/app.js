@@ -10,29 +10,34 @@
   const backdrop = document.getElementById("backdrop");
   const progress = document.getElementById("progressTop");
 
+  // Lista plana de secciones, en orden (los 16 temas + inicio y parcial)
+  const SECTION_ORDER = [
+    "inicio",
+    "org-saludables", "empowerment", "reingenieria", "outplacement", "benchmarking",
+    "outsourcing", "fatiga", "gerencia-rrhh", "reuniones", "transformacion-digital",
+    "upskilling", "learnability", "cambio", "empresa-consciente", "rse", "entrepreneur",
+    "parcial", "simulacro",
+  ];
+
   function buildNav() {
     navEl.innerHTML = "";
-    GTH.groups.forEach((group) => {
-      const wrap = document.createElement("div");
-      wrap.className = "nav-group";
-      const title = document.createElement("div");
-      title.className = "nav-group-title";
-      title.textContent = group;
-      wrap.appendChild(title);
-      GTH.sections
-        .filter((s) => s.group === group)
-        .forEach((s) => {
-          const a = document.createElement("a");
-          a.className = "nav-link";
-          a.href = "#" + s.id;
-          a.dataset.id = s.id;
-          a.innerHTML =
-            "<span>" + s.title + "</span>" +
-            (s.tag ? '<span class="tag">' + s.tag + "</span>" : "");
-          wrap.appendChild(a);
-        });
-      navEl.appendChild(wrap);
-    });
+    const wrap = document.createElement("div");
+    wrap.className = "nav-group";
+    const idx = (id) => { const i = SECTION_ORDER.indexOf(id); return i < 0 ? 999 : i; };
+    GTH.sections
+      .slice()
+      .sort((a, b) => idx(a.id) - idx(b.id))
+      .forEach((s) => {
+        const a = document.createElement("a");
+        a.className = "nav-link";
+        a.href = "#" + s.id;
+        a.dataset.id = s.id;
+        a.innerHTML =
+          "<span>" + s.title + "</span>" +
+          (s.tag ? '<span class="tag">' + s.tag + "</span>" : "");
+        wrap.appendChild(a);
+      });
+    navEl.appendChild(wrap);
   }
 
   function renderSection(id) {

@@ -16,7 +16,7 @@
   /* ===================== FATIGA, ESTRÉS & BURNOUT ===================== */
   reg("fatiga", "Fatiga, Estrés & Burnout", "🔋", `
     <div class="page-head">
-      <div class="page-kicker">Bienestar &amp; gestión</div>
+      <div class="page-kicker">Gestión del Talento Humano · 2º Parcial</div>
       <h1>Fatiga, Estrés &amp; Burnout</h1>
       <p class="lead">Tres fenómenos <b>interrelacionados</b>: Fatiga → Estrés → Burnout. Uno lleva al otro si no se gestiona.</p>
     </div>
@@ -72,7 +72,7 @@
   /* ===================== ESTRUCTURA GERENCIA DE RRHH ===================== */
   reg("gerencia-rrhh", "Estructura de la Gerencia de RRHH", "🏢", `
     <div class="page-head">
-      <div class="page-kicker">Bienestar &amp; gestión</div>
+      <div class="page-kicker">Gestión del Talento Humano · 2º Parcial</div>
       <h1>Estructura de la Gerencia de RRHH</h1>
       <p class="lead">De "Departamento de Personal" a <b>Dirección de Personas</b>: el foco pasa a estar en la gente.</p>
     </div>
@@ -103,7 +103,7 @@
   /* ===================== REUNIONES EFECTIVAS ===================== */
   reg("reuniones", "Reuniones Efectivas", "🗓️", `
     <div class="page-head">
-      <div class="page-kicker">Bienestar &amp; gestión</div>
+      <div class="page-kicker">Gestión del Talento Humano · 2º Parcial</div>
       <h1>Reuniones Efectivas</h1>
       <p class="lead">Una reunión vale la pena cuando logra sus metas en el <b>menor tiempo posible</b>.</p>
     </div>

@@ -16,7 +16,7 @@
   /* ===================== ORGANIZACIONES SALUDABLES ===================== */
   reg("org-saludables", "Organizaciones Saludables", "🌿", `
     <div class="page-head">
-      <div class="page-kicker">Personas &amp; cultura</div>
+      <div class="page-kicker">Gestión del Talento Humano · 2º Parcial</div>
       <h1>Organizaciones Saludables</h1>
       <p class="lead">Discriminación en el trabajo y ética empresarial: el impacto de la organización en las personas y la comunidad.</p>
     </div>
@@ -77,7 +77,7 @@
   /* ===================== EMPRESA CONSCIENTE ===================== */
   reg("empresa-consciente", "Empresas Conscientes", "🧭", `
     <div class="page-head">
-      <div class="page-kicker">Personas &amp; cultura</div>
+      <div class="page-kicker">Gestión del Talento Humano · 2º Parcial</div>
       <h1>Empresas Conscientes</h1>
       <p class="lead">Basado en <b>"La Empresa Consciente"</b> de Fredy Kofman: un impacto positivo en el mundo
       <b>más allá de los objetivos financieros</b>.</p>
@@ -118,7 +118,7 @@
   /* ===================== RSE & SUSTENTABILIDAD ===================== */
   reg("rse", "RSE & Sustentabilidad", "♻️", `
     <div class="page-head">
-      <div class="page-kicker">Personas &amp; cultura</div>
+      <div class="page-kicker">Gestión del Talento Humano · 2º Parcial</div>
       <h1>RSE &amp; Sustentabilidad</h1>
       <p class="lead">La contribución <b>activa y voluntaria</b> de las empresas al mejoramiento social, económico y ambiental.</p>
     </div>
@@ -171,7 +171,7 @@
   /* ===================== CAMBIO ===================== */
   reg("cambio", "Cambio", "🔁", `
     <div class="page-head">
-      <div class="page-kicker">Personas &amp; cultura</div>
+      <div class="page-kicker">Gestión del Talento Humano · 2º Parcial</div>
       <h1>Cambio</h1>
       <p class="lead">El cambio organizacional, la resistencia y cómo se gestiona la transición.</p>
     </div>

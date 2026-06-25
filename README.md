@@ -1,57 +1,62 @@
-# Gestión del Talento Humano · Resumen 2º Parcial (UTN.BA)
+# Resumen interactivo de Gestión del Talento Humano (UTN.BA)
 
-Web interactiva con el resumen de **todos los temas del segundo parcial** de Gestión del Talento Humano, más las **preguntas de parcial resueltas** y un **modelo de parcial** para practicar.
+Una web **interactiva** para estudiar el **2º parcial** de Gestión del Talento Humano: el resumen de
+todos los temas, las **preguntas de parcial resueltas** y un **modelo de parcial** para practicar.
 
-No usa build, servidor ni dependencias: es HTML + CSS + JavaScript plano.
+> Sin instalación: se abre con doble clic en `index.html`. No necesita servidor ni build.
 
-## Cómo levantarla
+## ✨ Qué incluye
 
-**Opción 1 — doble clic:** abrí `index.html` con doble clic y se abre en el navegador.
+- **Personas & cultura:** Organizaciones saludables (discriminación y ética empresarial), Empresas
+  conscientes (Kofman), RSE & sustentabilidad y Cambio.
+- **Herramientas estratégicas:** Empowerment, Reingeniería, Benchmarking, Outsourcing y Outplacement
+  (con casos reales: Mercado Libre, SanCor, Garbarino, Lemon Cash).
+- **Talento & futuro:** Transformación digital, Upskilling/Reskilling, Learnability y Entrepreneur.
+- **Bienestar & gestión:** Fatiga/Estrés/Burnout, Estructura de la Gerencia de RRHH y Reuniones efectivas.
+- **Preguntas de parcial** reales (filtrables por tema, con la respuesta correcta marcada) y un
+  **modelo de parcial** con preguntas de práctica en el estilo del examen.
 
-**Opción 2 — servidor local (recomendado):**
-```bash
-python3 -m http.server 8000
-```
-Luego entrá a http://localhost:8000 (para frenar: `Ctrl+C`).
+## 🧩 Piezas interactivas
 
-**Online:** desplegado como sitio estático en Vercel (sin build).
+- **Cuestionario** con corrección al instante: Verdadero/Falso, opción única, selección múltiple,
+  preguntas a desarrollar y de unir con flechas.
+- **Filtro por tema** y contador de aciertos para practicar enfocado.
 
-## Contenido
+## 🚀 Cómo usar
 
-### Temas (resumen)
-- **Personas & cultura:** Organizaciones saludables (discriminación y ética), Empresas conscientes, RSE & sustentabilidad, Cambio.
-- **Herramientas estratégicas:** Empowerment, Reingeniería, Benchmarking, Outsourcing, Outplacement.
-- **Talento & futuro:** Transformación digital, Upskilling/Reskilling, Learnability, Entrepreneur.
-- **Bienestar & gestión:** Fatiga/Estrés/Burnout, Estructura de la Gerencia de RRHH, Reuniones efectivas.
+1. Cloná o descargá el repo.
+2. Abrí `index.html` en el navegador (o serví la carpeta con `python3 -m http.server 8000`).
 
-### Parcial
-- **Preguntas de parcial:** las preguntas reales que corresponden a los temas del 2º parcial, interactivas y filtrables por tema (las de otros parciales se descartaron).
-- **Modelo de parcial:** preguntas de práctica elaboradas en el estilo del examen (V/F, opción múltiple, completar, desarrollar y unir). No son las reales.
+## 🛠️ Tecnología
 
-## Estructura
+HTML + CSS + JavaScript vanilla (sin frameworks ni build). Estructura:
 
 ```
 index.html
 styles.css
-favicon.svg
-README.md
 js/
-  core.js              · registro de secciones + helpers de DOM
-  app.js               · navegación, routing por hash y menú mobile
-  widgets/quiz.js      · cuestionario interactivo (V/F, opción múltiple, multi, abierta, unir)
-  content/
-    inicio.js          · portada
-    personas.js        · Personas & cultura
-    herramientas.js    · Herramientas estratégicas
-    futuro.js          · Talento & futuro
-    bienestar.js       · Bienestar & gestión
-    parcial.js         · preguntas reales del parcial
-    simulacro.js       · modelo de parcial (práctica)
+  core.js          · registro de secciones + helpers de DOM
+  app.js           · navegación y routing
+  widgets/         · cuestionario interactivo
+  content/         · una sección por bloque de temas + parcial + modelo de parcial
 ```
 
-## Cómo agregar o editar contenido
+## 📄 Licencia
 
-Cada sección se registra con `GTH.register({ id, group, title, tag, render(el) { ... } })`.
-Para sumar un tema nuevo: editá/creá un archivo en `js/content/`, registrá la sección y agregá el `<script>` correspondiente en `index.html` (antes de `js/app.js`).
+[MIT](LICENSE) — podés usar, modificar y compartir libremente.
 
-Para sumar preguntas, editá el array `QUESTIONS` en `parcial.js` o `simulacro.js`. Cada pregunta admite los tipos: `vf`, `mc`, `multi`, `open` y `match`.
+## 🙌 Créditos
+
+- Material de base: cátedra de **Gestión del Talento Humano**, **UTN.BA** (los PDFs y PPT de la cátedra
+  no se incluyen en el repo por derechos de autor).
+
+## 👤 Autor
+
+**ejdavenheimer**
+
+- GitHub: https://github.com/ejdavenheimer
+- LinkedIn: https://www.linkedin.com/in/ejdavenheimer/
+- Discord: https://discord.gg/7S3uZXYrE7
+- Plan de estudio UTN: https://planutn.dhem.tech/
+
+📦 **Código de este proyecto:** https://github.com/ejdavenheimer/gth

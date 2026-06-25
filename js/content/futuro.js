@@ -1,11 +1,12 @@
 (function () {
   "use strict";
   const GTH = window.GTH;
-  const GROUP = "Talento & futuro";
+  const COMP = "Temas complementarios (PPT)";
+  const U4 = "Unidad IV · Herramientas estratégicas";
 
-  function reg(id, title, tag, html) {
+  function reg(group, id, title, tag, html) {
     GTH.register({
-      id, group: GROUP, title, tag,
+      id, group, title, tag,
       render(el) {
         el.innerHTML = html;
         el.querySelectorAll("[data-go]").forEach((c) => c.addEventListener("click", () => GTH.go(c.dataset.go)));
@@ -14,9 +15,9 @@
   }
 
   /* ===================== TRANSFORMACIÓN DIGITAL ===================== */
-  reg("transformacion-digital", "Transformación Digital", "🚀", `
+  reg(COMP, "transformacion-digital", "Transformación Digital", "🚀", `
     <div class="page-head">
-      <div class="page-kicker">Talento &amp; futuro</div>
+      <div class="page-kicker">Gestión del Talento Humano · 2º Parcial</div>
       <h1>Transformación Digital</h1>
       <p class="lead">Un <b>cambio de mentalidad</b> y de cultura organizacional, no solo tecnología.</p>
     </div>
@@ -64,9 +65,9 @@
   `);
 
   /* ===================== UPSKILLING / RESKILLING ===================== */
-  reg("upskilling", "Upskilling & Reskilling", "🎓", `
+  reg(COMP, "upskilling", "Upskilling & Reskilling", "🎓", `
     <div class="page-head">
-      <div class="page-kicker">Talento &amp; futuro</div>
+      <div class="page-kicker">Gestión del Talento Humano · 2º Parcial</div>
       <h1>Upskilling &amp; Reskilling</h1>
       <p class="lead">Cómo las empresas desarrollan <b>nuevas habilidades y competencias</b> en sus colaboradores.</p>
     </div>
@@ -108,9 +109,9 @@
   `);
 
   /* ===================== LEARNABILITY ===================== */
-  reg("learnability", "Learnability", "🧠", `
+  reg(COMP, "learnability", "Learnability", "🧠", `
     <div class="page-head">
-      <div class="page-kicker">Talento &amp; futuro</div>
+      <div class="page-kicker">Gestión del Talento Humano · 2º Parcial</div>
       <h1>Learnability</h1>
       <p class="lead">La <b>capacidad de aprender nuevas habilidades a lo largo de la vida</b> para seguir siendo empleable.</p>
     </div>
@@ -150,9 +151,9 @@
   `);
 
   /* ===================== ENTREPRENEUR ===================== */
-  reg("entrepreneur", "Entrepreneur", "🦄", `
+  reg(U4, "entrepreneur", "Entrepreneur", "🦄", `
     <div class="page-head">
-      <div class="page-kicker">Talento &amp; futuro</div>
+      <div class="page-kicker">Gestión del Talento Humano · 2º Parcial</div>
       <h1>Entrepreneur / Emprendedorismo</h1>
       <p class="lead">La persona que <b>ve una oportunidad</b> y moviliza recursos para aprovecharla, asumiendo riesgos.</p>
     </div>

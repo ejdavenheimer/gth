@@ -1,7 +1,7 @@
 (function () {
   "use strict";
   const GTH = window.GTH;
-  const GROUP = "Herramientas estratégicas";
+  const GROUP = "Unidad IV · Herramientas estratégicas";
 
   function reg(id, title, tag, html) {
     GTH.register({
@@ -16,7 +16,7 @@
   /* ===================== EMPOWERMENT ===================== */
   reg("empowerment", "Empowerment", "💪", `
     <div class="page-head">
-      <div class="page-kicker">Herramientas estratégicas</div>
+      <div class="page-kicker">Gestión del Talento Humano · 2º Parcial</div>
       <h1>Empowerment</h1>
       <p class="lead">Delegar <b>poder y autoridad</b> en los colaboradores para que sean dueños de su propio trabajo.</p>
     </div>
@@ -70,7 +70,7 @@
   /* ===================== REINGENIERÍA ===================== */
   reg("reingenieria", "Reingeniería", "♻️", `
     <div class="page-head">
-      <div class="page-kicker">Herramientas estratégicas</div>
+      <div class="page-kicker">Gestión del Talento Humano · 2º Parcial</div>
       <h1>Reingeniería</h1>
       <p class="lead">Repensar y <b>rediseñar radicalmente</b> los procesos de una organización para lograr mejoras espectaculares.</p>
     </div>
@@ -122,7 +122,7 @@
   /* ===================== BENCHMARKING ===================== */
   reg("benchmarking", "Benchmarking", "📊", `
     <div class="page-head">
-      <div class="page-kicker">Herramientas estratégicas</div>
+      <div class="page-kicker">Gestión del Talento Humano · 2º Parcial</div>
       <h1>Benchmarking</h1>
       <p class="lead"><b>Comparar</b> el desempeño con otras organizaciones, <b>aprender</b> de las mejores prácticas y <b>mejorar</b>.</p>
     </div>
@@ -172,7 +172,7 @@
   /* ===================== OUTSOURCING ===================== */
   reg("outsourcing", "Outsourcing", "🔗", `
     <div class="page-head">
-      <div class="page-kicker">Herramientas estratégicas</div>
+      <div class="page-kicker">Gestión del Talento Humano · 2º Parcial</div>
       <h1>Outsourcing</h1>
       <p class="lead"><b>Tercerizar</b> áreas o procesos de una organización para enfocarse en lo estratégico.</p>
     </div>
@@ -215,7 +215,7 @@
   /* ===================== OUTPLACEMENT ===================== */
   reg("outplacement", "Outplacement", "🚪", `
     <div class="page-head">
-      <div class="page-kicker">Herramientas estratégicas</div>
+      <div class="page-kicker">Gestión del Talento Humano · 2º Parcial</div>
       <h1>Outplacement</h1>
       <p class="lead">Conjunto de técnicas para <b>contener, orientar y reubicar</b> a los trabajadores cuando la empresa
       debe prescindir de sus servicios.</p>
