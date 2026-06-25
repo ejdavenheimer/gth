@@ -10,10 +10,11 @@ No usa build, servidor ni dependencias: es HTML + CSS + JavaScript plano.
 
 **Opción 2 — servidor local (recomendado):**
 ```bash
-cd web-gth
 python3 -m http.server 8000
 ```
 Luego entrá a http://localhost:8000 (para frenar: `Ctrl+C`).
+
+**Online:** desplegado como sitio estático en Vercel (sin build).
 
 ## Contenido
 
