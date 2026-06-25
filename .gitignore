@@ -1,0 +1,12 @@
+# === Materiales fuente — NO publicar por derechos de autor ===
+*.pdf
+*.ppt
+*.pptx
+*.doc
+*.docx
+*.key
+/examen1
+/Preguntas de parcial
+
+# Sitio modelo de referencia (vive en su propio repo)
+web/
