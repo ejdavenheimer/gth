@@ -122,34 +122,38 @@
   ];
 
   GTH.register({
-    id: "parcial",
-    group: "Parcial",
-    title: "Preguntas de parcial",
+    id: "p2-practica",
+    group: "2do Parcial",
+    title: "Preguntas y exámenes",
     tag: "📝",
     render(el) {
       el.innerHTML = `
         <div class="page-head">
-          <div class="page-kicker">Práctica para el parcial</div>
-          <h1>Preguntas de parcial resueltas</h1>
-          <p class="lead">Las preguntas reales que <b>corresponden a los temas de este parcial</b>, interactivas.
-          Respondé sin mirar: la web te marca al toque la opción correcta. Usá los filtros para practicar por tema.</p>
+          <div class="page-kicker">2do Parcial · práctica</div>
+          <h1>Preguntas y exámenes</h1>
+          <p class="lead">Todo para practicar en un solo lugar, interactivo y con corrección y explicación al instante.
+          Elegí con las pestañas.</p>
         </div>
-
-        <div class="callout info">
-          <div class="callout-title">ℹ️ Nota</div>
-          <p>De la tanda original de preguntas se dejaron solo las que pertenecen a los temas del 2º parcial. Las que eran
-          de otros temas (organización que aprende, Kolb, marca personal/CV, etc.) no se incluyen.</p>
+        <div class="legend-box">
+          <span><b>📘 Preguntas</b>: las reales del 2º parcial, filtrables por tema.</span>
+          <span><b>🧪 Modelo</b>: generado para practicar (16 temas).</span>
         </div>
-
-        <div class="callout tip">
-          <div class="callout-title">💡 Cómo usarlo</div>
-          <p>En las de opción única hacé clic en una respuesta. En las de selección múltiple, marcá todas las que creas y
-          tocá <b>Comprobar</b>. Las preguntas a desarrollar y las de unir tienen botón para revelar la respuesta.</p>
+        <div class="tabs">
+          <button class="tab active" data-ex="banco">📘 Preguntas</button>
+          <button class="tab" data-ex="modelo">🧪 Modelo</button>
         </div>
-
-        <div id="quizMount"></div>
+        <div id="exMount"></div>
       `;
-      GTH.quiz(el.querySelector("#quizMount"), QUESTIONS);
+      const mount = el.querySelector("#exMount");
+      const sets = { banco: QUESTIONS, modelo: (GTH.modelo2Questions || []) };
+      const show = (n) => { mount.innerHTML = ""; GTH.quiz(mount, sets[n] || QUESTIONS); };
+      el.querySelectorAll(".tab").forEach((t) => {
+        t.addEventListener("click", () => {
+          el.querySelectorAll(".tab").forEach((x) => x.classList.toggle("active", x === t));
+          show(t.dataset.ex);
+        });
+      });
+      show("banco");
     },
   });
 })();

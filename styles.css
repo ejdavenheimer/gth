@@ -545,3 +545,112 @@ details.qa[open] summary { color: var(--brand); }
 .q-match li { background:var(--panel-soft); border:1px solid var(--line); border-radius:9px; padding:.5rem .8rem; font-size:.9rem; }
 .q-match b { color:var(--brand); }
 .btn-reveal { margin-top:.3rem; }
+
+/* Pregunta V/F con varios ítems (un solo número) */
+.q-vflist { margin:.3rem 0 .2rem; }
+.q-vfrow { display:flex; gap:.8rem; align-items:center; justify-content:space-between; padding:.5rem 0; border-bottom:1px dashed var(--line); }
+.q-vfrow:last-child { border-bottom:none; }
+.q-vftext { flex:1; font-size:.92rem; }
+.q-vfbtns { display:flex; gap:.4rem; flex:0 0 auto; }
+.q-vfbtn { padding:.32rem .7rem; font-size:.8rem; min-width:84px; justify-content:center; }
+.q-vfbtn.sel { border-color:var(--brand); background:var(--brand-soft); color:var(--brand); }
+
+/* ============ Visuales (cuadritos del manual) ============ */
+/* Flujo / ciclo */
+.flow { display:flex; flex-wrap:wrap; align-items:center; gap:.5rem; margin:1.1rem 0; }
+.flow .node { background:linear-gradient(135deg,var(--brand),var(--brand-2)); color:#fff; font-weight:700;
+  padding:.55rem .9rem; border-radius:12px; font-size:.9rem; box-shadow:var(--shadow); }
+.flow .arrow { color:var(--brand); font-size:1.25rem; font-weight:700; }
+.flow .loop { font-size:.74rem; color:var(--brand); background:var(--brand-soft); border:1px solid #99f6e4;
+  border-radius:999px; padding:.25rem .6rem; font-weight:700; }
+
+/* Mapeo en 2 columnas con flecha */
+.mapgrid { display:grid; gap:.55rem; margin:1.1rem 0; }
+.maprow { display:grid; grid-template-columns:1fr auto 1.4fr; align-items:center; gap:.7rem;
+  background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:.6rem .9rem; box-shadow:var(--shadow); }
+.maprow .from { font-weight:700; color:var(--brand); }
+.maprow .ar { color:var(--brand); font-size:1.25rem; font-weight:700; }
+.maprow .to small { display:block; color:var(--ink-soft); font-size:.82rem; }
+@media (max-width:640px){ .maprow{ grid-template-columns:1fr; text-align:center } .maprow .ar{ transform:rotate(90deg) } }
+
+/* Niveles apilados (autoconocimiento) */
+.levels { display:flex; flex-direction:column; gap:.5rem; margin:1.1rem 0; }
+.level { display:flex; align-items:center; gap:.8rem; border:1px solid var(--line); border-radius:12px;
+  padding:.7rem 1rem; background:var(--panel); box-shadow:var(--shadow); }
+.level .lvl-n { flex:0 0 auto; width:2rem; height:2rem; border-radius:50%;
+  background:linear-gradient(135deg,var(--brand),var(--brand-2)); color:#fff; font-weight:800; display:grid; place-items:center; }
+
+/* Diamante de presentación */
+.diamond { display:flex; flex-direction:column; align-items:center; gap:.45rem; margin:1.2rem 0; }
+.diamond .d { background:var(--brand-soft); border:1px solid #99f6e4; color:#0f766e; border-radius:12px;
+  padding:.55rem 1rem; font-weight:700; text-align:center; }
+.diamond .d-xs { width:42%; } .diamond .d-sm { width:60%; } .diamond .d-lg { width:88%; }
+.diamond .darrow { color:var(--brand); font-size:1rem; }
+
+/* ============ Flashcards (memorización) ============ */
+.flashcards { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:.8rem; margin:1.2rem 0; }
+.flashcard { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:1rem;
+  min-height:96px; cursor:pointer; box-shadow:var(--shadow); display:flex; flex-direction:column; justify-content:center;
+  text-align:center; transition:transform .12s, border-color .15s, background .15s; }
+.flashcard:hover { border-color:#99f6e4; transform:translateY(-2px); }
+.flashcard .fc-front { font-weight:700; }
+.flashcard .fc-back { font-size:.88rem; color:var(--ink-soft); margin-top:.45rem; display:none; }
+.flashcard.open .fc-back { display:block; }
+.flashcard.open { background:var(--brand-soft); border-color:#99f6e4; }
+.flashcard .fc-hint { font-size:.68rem; color:var(--muted); margin-top:.45rem; text-transform:uppercase; letter-spacing:.05em; }
+
+/* ============ Pregunta de completar (fill) ============ */
+.q-fill { display:flex; gap:.5rem; margin:.6rem 0; flex-wrap:wrap; align-items:center; }
+.q-fill input { border:1px solid var(--line); border-radius:9px; padding:.5rem .7rem; font-size:.95rem;
+  font-family:inherit; min-width:220px; }
+.q-fill input.correct { border-color:#a7f3d0; background:var(--ok-soft); color:#065f46; font-weight:600; }
+.q-fill input.wrong { border-color:#fecaca; background:var(--bad-soft); color:#991b1b; }
+.q-fill-label { font-size:.92rem; color:var(--ink); align-self:center; }
+
+/* Match interactivo (unir con flechas) */
+.q-matchx { display:flex; flex-direction:column; gap:.5rem; margin:.5rem 0; }
+.q-mrow { display:grid; grid-template-columns:1fr 1.4fr; gap:.6rem; align-items:center; }
+.q-mleft { font-weight:700; color:var(--brand); background:var(--brand-soft); border:1px solid #99f6e4;
+  border-radius:10px; padding:.55rem .7rem; font-size:.9rem; }
+.q-msel { border:1px solid var(--line); border-radius:10px; padding:.55rem .6rem; font-size:.86rem;
+  font-family:inherit; background:#fff; color:var(--ink); width:100%; }
+.q-msel.correct { border-color:#a7f3d0; background:var(--ok-soft); color:#065f46; font-weight:600; }
+.q-msel.wrong { border-color:#fecaca; background:var(--bad-soft); color:#991b1b; }
+@media (max-width:560px){ .q-mrow{ grid-template-columns:1fr; } }
+
+/* Leyenda de tipos de práctica */
+.legend-box { display:flex; flex-wrap:wrap; gap:1rem; background:var(--panel-soft); border:1px solid var(--line);
+  border-radius:12px; padding:.7rem 1rem; margin:1rem 0; font-size:.88rem; }
+.legend-box b { color:var(--brand); }
+
+/* Caja de ejemplo (tipo documento) */
+.example { background:#fff; border:1px dashed var(--brand); border-radius:12px; padding:1rem 1.2rem; margin:.8rem 0; box-shadow:var(--shadow); }
+.example .ex-tag { display:inline-block; font-size:.68rem; font-weight:800; text-transform:uppercase; letter-spacing:.05em;
+  color:var(--brand); background:var(--brand-soft); border-radius:999px; padding:.18rem .65rem; margin-bottom:.6rem; }
+.example p { margin:.5rem 0; font-size:.92rem; }
+.example .sig { text-align:right; color:var(--ink-soft); font-style:italic; }
+
+/* Diamante al lado de la explicación */
+.diamond-row { display:grid; grid-template-columns:minmax(180px,240px) 1fr; gap:1.4rem; align-items:center; margin:1.2rem 0; }
+.diamond-row .diamond { margin:0; }
+@media (max-width:720px){ .diamond-row{ grid-template-columns:1fr; } }
+
+/* Ciclo de Kolb (rectángulo que se repite) */
+.kolb { border:2px solid var(--brand); border-radius:16px; padding:1.2rem 1.2rem .9rem; margin:1.2rem 0; background:var(--brand-soft); }
+.kolb-flow { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:.5rem; }
+.kolb-flow .node { background:linear-gradient(135deg,var(--brand),var(--brand-2)); color:#fff; font-weight:700;
+  padding:.55rem .9rem; border-radius:12px; font-size:.9rem; box-shadow:var(--shadow); }
+.kolb-flow .arrow { color:var(--brand); font-size:1.3rem; font-weight:800; }
+.kolb-loop { margin-top:.9rem; padding-top:.7rem; border-top:2px dashed var(--brand); text-align:center;
+  color:var(--brand); font-weight:700; font-size:.88rem; }
+
+/* Sketch de orador (4 campos) */
+.orator { display:grid; grid-template-columns:1fr 1fr; gap:.7rem; margin:1.1rem 0; }
+@media (max-width:640px){ .orator{ grid-template-columns:1fr; } }
+.ocard { border:1px solid var(--line); border-radius:12px; padding:.8rem .9rem; background:var(--panel); box-shadow:var(--shadow); display:flex; gap:.7rem; align-items:flex-start; }
+.ocard .oico { font-size:1.6rem; flex:0 0 auto; line-height:1; }
+.ocard h4 { margin:0 0 .2rem; font-size:.95rem; }
+.ocard p { margin:0; font-size:.85rem; color:var(--ink-soft); }
+.ocard .oex { display:block; margin-top:.35rem; font-size:.8rem; color:var(--brand); }
+.oex { display:block; margin-top:.5rem; font-size:.82rem; color:#0f766e; background:var(--brand-soft);
+  border-left:3px solid var(--brand); border-radius:8px; padding:.45rem .6rem; }

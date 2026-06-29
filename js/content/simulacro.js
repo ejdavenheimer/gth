@@ -180,30 +180,6 @@
       answer: "Descubridores de negocios, Creadores de negocios y Gestores de negocios." },
   ];
 
-  GTH.register({
-    id: "simulacro",
-    group: "Parcial",
-    title: "Modelo de parcial",
-    tag: "🧪",
-    render(el) {
-      el.innerHTML = `
-        <div class="page-head">
-          <div class="page-kicker">Simulacro · práctica</div>
-          <h1>Modelo de parcial</h1>
-          <p class="lead">Preguntas <b>de práctica</b> en el estilo del examen (V/F, opción múltiple, completar, desarrollar
-          y unir), cubriendo los 16 temas del parcial. <b>No son las preguntas reales</b>: son para entrenar.</p>
-        </div>
-
-        <div class="callout warn">
-          <div class="callout-title">⚠️ Aclaración</div>
-          <p>Estas preguntas las armé a partir del resumen y del formato de examen, para que practiques. Las preguntas
-          tomadas de verdad están en <a class="inline" data-go="parcial" style="cursor:pointer">Preguntas de parcial</a>.</p>
-        </div>
-
-        <div id="quizMount"></div>
-      `;
-      el.querySelectorAll("[data-go]").forEach((c) => c.addEventListener("click", () => GTH.go(c.dataset.go)));
-      GTH.quiz(el.querySelector("#quizMount"), QUESTIONS);
-    },
-  });
+  // Se expone el array para la sección unificada de práctica del 2do parcial.
+  GTH.modelo2Questions = QUESTIONS;
 })();
