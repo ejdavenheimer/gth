@@ -44,6 +44,17 @@
         " respondidas · " + state.total + " preguntas";
     }
 
+    // Cartel de resultado correcto/incorrecto (el aviso se adapta al tipo)
+    function feedback(ok, kind) {
+      const hint = kind === "fill" ? "mirá la respuesta correcta abajo"
+        : kind === "match" ? "mirá las relaciones correctas abajo"
+        : "fijate la opción marcada en verde";
+      const d = document.createElement("div");
+      d.className = "q-result " + (ok ? "ok" : "bad");
+      d.innerHTML = ok ? "✅ ¡Correcto!" : "❌ Incorrecto — " + hint + ".";
+      return d;
+    }
+
     function renderList() {
       list.innerHTML = "";
       questions
@@ -114,6 +125,7 @@
           state.answered++;
           if (allRight) state.correct++;
           updateScore();
+          c.appendChild(feedback(allRight, "match"));
           const ul = document.createElement("ul");
           ul.className = "q-match";
           q.pairs.forEach((p) => {
@@ -167,6 +179,7 @@
           state.answered++;
           if (allRight) state.correct++;
           updateScore();
+          c.appendChild(feedback(allRight, "fill"));
           const rev = document.createElement("div");
           rev.className = "q-reveal";
           rev.innerHTML = '<div class="ans"><b>Respuesta:</b> ' + ans.join(" · ") + "</div>" +
@@ -217,6 +230,7 @@
           q.items.forEach((it, i) => {
             const correct = it.ok === true || it.ok === "V" ? "V" : "F";
             const b = it._btns.querySelectorAll(".q-vfbtn");
+            b.forEach((x) => x.classList.remove("sel")); // limpiar resaltado de selección
             const correctBtn = correct === "V" ? b[0] : b[1];
             correctBtn.classList.add("correct");
             if (picks[i] && picks[i] !== correct) {
@@ -228,6 +242,7 @@
           state.answered++;
           if (allRight) state.correct++;
           updateScore();
+          c.appendChild(feedback(allRight));
           if (q.explain) {
             const ex = document.createElement("div");
             ex.className = "q-reveal";
@@ -275,15 +290,16 @@
         let allRight = true;
         q.options.forEach((o, i) => {
           const picked = selected.indexOf(i) !== -1;
+          buttons[i].style.borderColor = ""; buttons[i].style.background = "";
           if (o.ok) buttons[i].classList.add("correct");
           if (picked && !o.ok) { buttons[i].classList.add("wrong"); allRight = false; }
           if (!picked && o.ok) allRight = false;
         });
         buttons.forEach((b) => (b.disabled = true));
-        const cc = c.querySelector(".btn-reveal-check"); if (cc) cc.remove();
         state.answered++;
         if (allRight) state.correct++;
         updateScore();
+        c.appendChild(feedback(allRight));
         if (q.explain) {
           const ex = document.createElement("div");
           ex.className = "q-reveal";

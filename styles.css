@@ -654,3 +654,8 @@ details.qa[open] summary { color: var(--brand); }
 .ocard .oex { display:block; margin-top:.35rem; font-size:.8rem; color:var(--brand); }
 .oex { display:block; margin-top:.5rem; font-size:.82rem; color:#0f766e; background:var(--brand-soft);
   border-left:3px solid var(--brand); border-radius:8px; padding:.45rem .6rem; }
+
+/* Cartel de resultado (correcto/incorrecto) */
+.q-result { font-weight:800; border-radius:9px; padding:.5rem .8rem; margin-top:.7rem; font-size:.92rem; }
+.q-result.ok  { background:var(--ok-soft);  color:#065f46; border:1px solid #a7f3d0; }
+.q-result.bad { background:var(--bad-soft); color:#991b1b; border:1px solid #fecaca; }
